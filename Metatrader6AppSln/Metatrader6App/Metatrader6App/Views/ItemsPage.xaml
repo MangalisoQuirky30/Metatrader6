@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Metatrader6App.Views.ItemsPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+
+
+
+    <ListView x:Name="itemListView"
+             
+              ItemsSource="{Binding Trades}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <ViewCell>
+
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout>
+                            <FlexLayout   Style="{StaticResource detailedDataCont}" >
+                                <Label Text="Balance:" Style="{StaticResource detailedData}"/>
+                                <Label Text="1000.00" Style="{StaticResource detailedData}"/>
+                            </FlexLayout>
+                        </StackLayout>
+                        <StackLayout>
+                            <FlexLayout Style="{StaticResource detailedDataCont}">
+                                <Label Text="Equity:" Style="{StaticResource detailedData}"/>
+                                <Label Text="1007.72" Style="{StaticResource detailedData}"/>
+                            </FlexLayout>
+                        </StackLayout>
+                        <StackLayout>
+                            <FlexLayout Style="{StaticResource detailedDataCont}" >
+                                <Label Text="Margin:" Style="{StaticResource detailedData}"/>
+                                <Label Text="146.35" Style="{StaticResource detailedData}"/>
+                            </FlexLayout>
+                        </StackLayout>
+                        <StackLayout>
+                            <FlexLayout Style="{StaticResource detailedDataCont}" >
+                                <Label Text="Free Margin:" Style="{StaticResource detailedData}"/>
+                                <Label Text="861.43" Style="{StaticResource detailedData}"/>
+                            </FlexLayout>
+                        </StackLayout>
+                        <StackLayout>
+                            <FlexLayout Style="{StaticResource detailedDataCont}" >
+                                <Label Text="Margin Level(%):" Style="{StaticResource detailedData}"/>
+                                <Label Text="688.64" Style="{StaticResource detailedData}"/>
+                            </FlexLayout>
+                        </StackLayout >
+                        <FlexLayout Style="{StaticResource positionsTitleCont}">
+                            <Label  Text="Positions"   Style="{StaticResource positionsTitle}" />
+                        </FlexLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
